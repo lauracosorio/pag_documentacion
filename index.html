@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <main id="main-doc">
+
+        <div class="row">
+
+            <aside class=" col-12 col-xs-12 col-md-5 col-lg-4 col-xl-3 bg-light" >
+                <nav id="navbar-brand" class="navbar navbar-light bg-light ">
+                    <header class="navbar-brand flex-column text-center sidebar-header" href="#">Conceptos Básicos <br> de CSS</header> <br>
+                    
+                    <nav class="nav nav-pills flex-column container-fluid">
+                        
+                        <a class="nav-link text-dark" href="#introduccion">Introducción</a>
+                        <a class="nav-link text-dark" href="#quees">¿Qué es CSS?</a>            
+                        <a class="nav-link text-dark" href="#anatomia">Anatomía de un conjunto de reglas CSS</a>          
+                        <a class="nav-link text-dark" href="#seleccionar">Seleccionar múltiples elementos</a>            
+                        <a class="nav-link text-dark" href="#fuentes">Fuentes y texto</a>                
+                        <a class="nav-link text-dark" href="#cajas">Cajas, cajas, se trata de cajas</a>             
+                        <a class="nav-link text-dark" href="#color">Cambiar el color de la página</a>               
+                        <a class="nav-link text-dark" href="#ordenar">Ordenar el cuerpo</a>             
+                        <a class="nav-link text-dark" href="#posicionar">Posicionar y diseñar el título de nuestra página principal</a>            
+                        <a class="nav-link text-dark" href="#centrando">Centrando la imagen</a>            
+                        <a class="nav-link text-dark" href="#referencias">Referencias</a>
+                   
+                    </nav>
+                </nav> 
+            </aside>
+
+            <section class="col-12 col-xs12 col-md-7 col-lg-8 col-xl-9">
+                <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+                    <section class="main-section" id="Introduccion" >
+                        <h4>Introducción</h4>
+
+                        <p>CSS (Cascading Style Sheets) es el código que usa para diseñar su página web. Los conceptos básicos de CSS lo llevan a través de lo que necesita para comenzar. Responderemos preguntas como: ¿Cómo hago que mi texto sea negro o rojo? ¿Cómo hago para que mi contenido aparezca en tal o cual lugar en la pantalla? ¿Cómo decoro mi página web con imágenes de fondo y colores?</p>
+
+                    </section>
+
+                    <section class="main-section" id="quees" >
+                        <h4>¿Qué es CSS?</h4>
+
+                        <p>Al igual que HTML, CSS no es realmente un lenguaje de programación. Tampoco es un lenguaje de marcado , es un lenguaje de hoja de estilo . Esto significa que le permite aplicar estilos selectivamente a elementos en documentos HTML. Por ejemplo, para seleccionar todos los elementos de párrafo en una página HTML y convertir el texto dentro de ellos en rojo, escribiría este CSS:</p> <br>
+
+                        <code class="bg-light"> p {
+                            color: red;
+                        } 
+                        </code> <br><br>
+
+                        <p>Probémoslo: pegue esas tres líneas de CSS en un nuevo archivo en su editor de texto, y luego guarde el archivo como style.cssen su stylesdirectorio. <br>
+
+                            Pero aún necesitamos aplicar el CSS a su documento HTML. De lo contrario, el estilo CSS no afectará la forma en que su navegador muestra el documento HTML. (Si no ha seguido con nuestro proyecto, lea Manejo de archivos y conceptos básicos de HTML para averiguar qué debe hacer primero). <br><br>
+                            
+                        1. Abra su index.htmlarchivo y pegue la siguiente línea en algún lugar de la cabeza: </p>
+                            
+                            <code class="bg-light languaje-html">
+                                link href="styles/style.css" rel="stylesheet"
+                            </code> <br><br>
+                            
+                        <p>2. Guárdelo index.htmly cárguelo en su navegador.</p>
+
+                    </section>
+
+                    <section class="main-section" id="anatomia" >
+
+                        <h4 id="">Anatomía de un conjunto de reglas CSS</h4>
+
+                        <p>Veamos el CSS anterior con un poco más de detalle:</p>
+
+                        <img class="img-responsive" src="./images/css-declaration-small.png" alt=""> <br><br>
+
+                        <p>Toda la estructura se llama un conjunto de reglas  (pero a menudo "regla" para abreviar). Tenga en cuenta los nombres de las partes individuales:</p>
+
+                        <h6>Selector</h6>
+
+                        <p>El nombre del elemento HTML al comienzo del conjunto de reglas. Selecciona los elementos que se diseñarán (en este caso, elementos <code class="">p</code>). Para diseñar un elemento diferente, simplemente cambie el selector.</p>
+
+                        <h6>Declaración</h6>
+
+                        <p>Una sola regla, como <code class="">color: red;</code> especifica qué propiedades del elemento desea diseñar.</p>
+
+                        <h6>Propiedades</h6>
+                        <p>Formas en que puede diseñar un elemento HTML dado. (En este caso, <code>color</code> es una propiedad de los elementos <code>p</code> ). En CSS, usted elige qué propiedades desea afectar en su regla.</p>
+
+                        <h6>El valor de la propiedad</h6>
+                        <p>A la derecha de la propiedad, después de los dos puntos, tenemos el valor de la propiedad , que elige uno de los muchos aspectos posibles para una propiedad determinada (hay muchos valores <code>color</code> además <code>red</code>).</p>
+                
+                        <p>Tenga en cuenta las otras partes importantes de la sintaxis: <br><br>
+
+                        · Cada conjunto de reglas (aparte del selector) debe estar envuelto en llaves <code>({})</code> . <br>
+                        · Dentro de cada declaración, debe usar dos puntos <code>(:) </code> para separar la propiedad de sus valores. <br>
+                        · Dentro de cada conjunto de reglas, debe usar un punto y coma<code>(;)</code>  para separar cada declaración de la siguiente. <br><br>
+                            Entonces, para modificar varios valores de propiedad a la vez, solo necesita escribirlos separados por punto y coma, de esta manera:</p>
+                            <code class="bg-light">
+                                p {
+                                    color: red;
+                                    width: 500px;
+                                    border: 1px solid black;
+                                }
+                            </code><br><br>
+                    </section>
+
+                    <section class="main-section" id="seleccionar" >
+                        <h4 id="">Seleccionar múltiples elementos</h4>
+                        <p>También puede seleccionar varios tipos de elementos y aplicar un único conjunto de reglas a todos ellos. Múltiples selectores están separados por comas. Por ejemplo:</p><br>
+                        <code class="bg-light">p, li, h1 {
+                            color: red;
+                        }</code> <br><br>
+                    </section>
+
+                    <section class="main-section" id="fuentes" >
+                        <h4 id="item-1">Fuentes y texto</h4>
+                        <p>Ahora que hemos explorado algunos conceptos básicos de CSS, comencemos a agregar más reglas e información a nuestro archivo <code>style.css</code> para que nuestro ejemplo se vea bien. Comencemos haciendo que nuestras fuentes y texto se vean un poco mejor. <br>
+
+                            <ol>
+                                <li>En primer lugar, regrese y encuentre la salida de Google Fonts que almacenó en un lugar seguro. Agregue el link elemento en algún lugar dentro de la cabeza de su <code>index.html</code> . Se verá más o menos así:</li> <br>
+                                <code class="bg-light">link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"</code> <br><br>
+                                <li>Este código vincula su página a una hoja de estilo que descarga la familia de fuentes Open Sans junto con su página web y le permite configurarla en sus elementos HTML utilizando su propia hoja de estilos. <br>
+                                    Luego, elimine la regla existente que tiene en su archivo <code>style.csss</code>. Fue una buena prueba, pero el texto rojo no se ve muy bien. <br><br></li>
+                                <li>Agregue las siguientes líneas en su lugar, reemplazando la línea de marcador de posición con la línea <code>font-family</code> real que obtuvo de Google Fonts. ( font-family solo significa la (s) fuente (s) que desea usar para su texto). Esta regla primero establece una fuente base global y un tamaño de fuente para toda la página (ya que html es el elemento padre de toda la página, y todos los elementos dentro de ella heredan el igual font-size y font-family):</li><br>
+
+                                <code class="bg-light">html {
+                                    font-size: 10px;
+                                    font-family: 
+                                }</code><br><br>
+            
+                                <div class="alert alert-dark border-0" role="alert">
+                                    Nota : Cualquier cosa en un documento CSS entre /*y */es un comentario CSS , que el navegador ignora cuando representa el código. Este es un lugar para escribir notas útiles sobre lo que está haciendo.
+                                </div>
+                                <li>hora vamos a establecer los tamaños de fuente para los elementos que contienen texto, en el interior del cuerpo HTML <code>( h1, li y p)</code>. También centraremos el texto de nuestro encabezado y estableceremos un poco de altura de línea y espacio entre letras en el contenido del cuerpo para que sea un poco más legible: <br><br>
+                                    <code class="bg-light">h1 {
+                                        font-size: 60px;
+                                        text-align: center;
+                                    } <br><br>
+                                    
+                                    p, li {font-size: 16px; 
+                                        line-height: 2;
+                                        letter-spacing: 1px;
+                                    }</code> <br><br>
+                
+                                    <p>Puede ajustar estos <code>px</code> a lo que quiera para que su diseño se vea como lo desea</p></li>
+                            </ol>
+                    </section> 
+
+                    <section class="main-section" id="cajas" >
+                        <h4 id="item-1">Cajas, cajas, se trata de cajas</h4>
+                        <p>Una cosa que notará al escribir CSS es que gran parte se trata de cuadros: establecer su tamaño, color, posición, etc. La mayoría de los elementos HTML en su página pueden considerarse cuadros que se encuentran uno encima del otro.</p>
+                        <p>No es sorprendente que el diseño CSS se base principalmente en el modelo de caja. Cada uno de los bloques que ocupan espacio en su página tiene propiedades como esta: <br>
+
+                            <ul>
+                                <li><b>padding</b>, el espacio justo alrededor del contenido (por ejemplo, alrededor del texto del párrafo).</li>
+                                <li><b>border</b>, la línea continua que se encuentra justo fuera del relleno.</li>
+                                <li><b>margin</b>, el espacio alrededor del exterior del elemento.</li>
+                            </ul>
+                        <p>
+                            En esta sección también usamos:
+                            <ul>
+                                <li><b>width </b> (de un elemento).</li>
+                                <li><b>background-color,</b> el color detrás del contenido y el relleno de un elemento.</li>
+                                <li><b>color</b>, el color del contenido de un elemento (generalmente texto).</li>
+                                <li><b>text-shadow:</b> establece una sombra paralela en el texto dentro de un elemento.</li>
+                                <li><b>display:</b> establece el modo de visualización de un elemento (no se preocupe por esto todavía).</li>
+                            </ul>
+                    
+                            ¡Entonces, comencemos y agreguemos más CSS a nuestra página! Siga agregando estas nuevas reglas al final de la página y no tenga miedo de experimentar con los valores cambiantes para ver cómo resulta.
+                        </p>
+
+                    </section>
+                    <section class="main-section" id="color" >
+                        <h4 id="item-1">Cambiar el color de la página</h4><br>
+                        <p>
+                            <code class="bg-light">html {
+                                background-color: #00539F;
+                            }</code>
+                        </p>
+
+                        <p>Esta regla establece un color de fondo para toda la página. Cambie el código de color anterior al color que elija al planificar su sitio .</p>
+                    </section>
+
+                    <section class="main-section" id="ordenar" >
+                        <h4 id="item-1">Ordenar el cuerpo</h4><br>
+                        <p>
+                            <code class="bg-light">body {
+                                width: 600px;
+                                margin: 0 auto;
+                                background-color: #FF9500;
+                                padding: 0 20px 20px 20px;
+                                border: 5px solid black;
+                            }</code>
+                        </p>
+
+                        <p>Ahora para el elemento <code>body</code>. Aquí hay bastantes declaraciones, así que analicémoslas una por una:
+
+                            <ul>
+                                <li><code>width: 600px;</code>  - esto obliga al cuerpo a tener siempre 600 píxeles de ancho.</li>
+                                <li> <code>margin: 0 auto;</code>- Cuando establece dos valores en una propiedad como margino padding, el primer valor afecta el lado superior e inferior del elemento ( 0en este caso) y el segundo valor el lado izquierdo y derecho (aquí, autoes un valor especial que divide el valor disponible espacio horizontal uniformemente entre izquierda y derecha). También puede usar uno, tres o cuatro valores, como se documenta aquí .</li>
+                                <li><code>background-color: #FF9500;</code> - como antes, esto establece el color de fondo del elemento. Hemos usado una especie de naranja rojizo para el cuerpo en lugar del azul oscuro para el <html>elemento, pero no dude en seguir adelante y experimentar. </li>
+                                <li><code>padding: 0 20px 20px 20px;</code> - tenemos cuatro valores establecidos en el relleno, para hacer un poco de espacio alrededor de nuestro contenido. Esta vez no estamos configurando ningún relleno en la parte superior del cuerpo, y 20 píxeles a la izquierda, abajo y derecha. Los valores se establecen arriba, derecha, abajo, izquierda, en ese orden. Al igual que con margin, también puede usar uno, dos o tres valores, como se documenta en la sintaxis de relleno .</li>
+                                <li><code>· border: 5px solid black;</code> - esto toma valores para el ancho, el estilo y el color del borde, en nuestro caso simplemente configurando un borde negro sólido de 5 píxeles de ancho en todos los lados del cuerpo.</li>
+                            </ul>
+                        </p> 
+                    </section>
+                    <section class="main-section" id="Posicionar" >
+                        <h4 id="item-1">Posicionar y diseñar el título de nuestra página principal</h4>
+                        <p>
+                            <code>
+                                h1 {
+                                margin: 0;
+                                padding: 20px 0;    
+                                color: #00539F;
+                                text-shadow: 3px 3px 1px black;
+                                }</code>
+                        </p>
+
+                        <p>
+                            Es posible que hayas notado que hay una brecha horrible en la parte superior del cuerpo. Eso sucede porque los navegadores aplican un estilo predeterminado al elemento h1 (entre otros), ¡incluso cuando no ha aplicado ningún CSS en absoluto! Puede parecer una mala idea, pero queremos que incluso una página web sin estilo tenga una legibilidad básica. Para deshacernos de la brecha, anulamos el estilo predeterminado configurando <br> <code>margin: 0;</code>. <br><br>
+
+                                A continuación, configuramos el relleno superior e inferior del encabezado en 20 píxeles e hicimos que el texto del encabezado tenga el mismo color que el color de fondo HTML. <br><br>
+                                
+                                Una propiedad bastante interesante que hemos usado aquí es la <code>text-shadow</code> que aplica una sombra de texto al contenido de texto del elemento. Sus cuatro valores son los siguientes: <br><br>
+                                
+                                <ul>
+                                    <li>El primer valor de píxel establece el <b>desplazamiento horizontal</b> de la sombra del texto: qué tan lejos se mueve: un valor negativo debe moverlo hacia la izquierda.</li>
+                                    <li>El segundo valor de píxel establece el <b>desplazamiento vertical</b> de la sombra del texto: en este ejemplo, cuánto se mueve hacia abajo; un valor negativo debería moverlo hacia arriba.</li>
+                                    <li>El tercer valor de píxel establece el <b>radio de desenfoque </b> de la sombra; un valor mayor significará una sombra más borrosa.</li>
+                                    <li>El cuarto valor establece el <b>color base</b> de la sombra.</li>
+                                </ul>
+                                ¡De nuevo, intente experimentar con diferentes valores para ver qué se le ocurre!
+                        </p>
+                    </section>
+
+                    <section class="main-section" id="Centrando" >
+                        <h4 id="item-1">Centrando la imagen</h4><br>
+                        <p>
+                            <code class="bg-light">
+                                img {
+                                    display: block;
+                                    margin: 0 auto;
+                                }
+                            </code> <br>
+                        </p>
+                        <p>
+                            Finalmente, centraremos la imagen para que se vea mejor. Podríamos usar el margin: 0 autotruco nuevamente como lo hicimos anteriormente para el cuerpo, pero también tenemos que hacer algo más. El elemento <code>body</body></code> está a nivel de bloque , lo que significa que ocupa espacio en la página y puede tener margen y otros valores de espaciado aplicados. Las imágenes, por otro lado, son elementos en línea , lo que significa que no pueden. Entonces, para aplicar márgenes a la imagen, tenemos que dar el comportamiento de nivel de bloque de imagen usando <code>display: block;</code>.
+                        </p>
+
+                        <div class="alert alert-dark border-0" role="alert">
+                        <b> Nota :</b> Las instrucciones anteriores suponen que está utilizando una imagen más pequeña que el ancho establecido en el cuerpo (600 píxeles). Si su imagen es más grande, desbordará el cuerpo y se extenderá al resto de la página. Para rectificar esto, puede 1) reducir el ancho de la imagen usando un editor de gráficos , o 2) ajustar el tamaño de la imagen usando CSS configurando la propiedad <code>width</code> en el elemento <code>img</code> con un valor menor (por ejemplo,  400 px;).
+                        </div>
+                    </section>
+
+                    <section class="main-section" id=" Referencias" >
+                        <h4 id="item-1">Referencias</h4>
+                        <p>Toda la identificación de esta página es tomada de <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics" target="_blank">MDN</a></p>
+                    </section>
+                </div>
+            </section>
+
+        </div>
+
+    
+    </main>
+     
+    
+</body>
+</html>
