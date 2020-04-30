@@ -3,7 +3,9 @@ body {
     margin-left: 20px;
 }
 
-
+p, section, li{
+    text-align: justify;
+}
 
 .navbar-brand  {
     font-weight: 700;
